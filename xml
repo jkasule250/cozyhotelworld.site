@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<website>
+  <metadata>
+    <title>The Cozy Hotel – Kigali, Rwanda</title>
+    <description>Luxury, comfort, and tranquility in the heart of Kigali</description>
+    <keywords>hotel, Kigali, Rwanda, luxury, accommodation, spa, restaurant</keywords>
+    <author>The Cozy Hotel</author>
+    <viewport>width=device-width, initial-scale=1.0</viewport>
+    <theme>yellow</theme>
+  </metadata>
+
+  <navigation>
+    <menuItem>
+      <name>Home</name>
+      <link>#home</link>
+      <target>_self</target>
+    </menuItem>
+    <menuItem>
+      <name>About</name>
+      <link>#about</link>
+      <target>_self</target>
+    </menuItem>
+    <menuItem>
+      <name>Rooms</name>
+      <link>#rooms</link>
+      <target>_self</target>
+    </menuItem>
+    <menuItem>
+      <name>Gallery</name>
+      <link>#gallery</link>
+      <target>_self</target>
+    </menuItem>
+    <menuItem>
+      <name>Contact</name>
+      <link>#contact</link>
+      <target>_self</target>
+    </menuItem>
+  </navigation>
+
+  <pages>
+    <page id="home">
+      <hero>
+        <title>Welcome to The Cozy Hotel</title>
+        <subtitle>Luxury, comfort, and tranquility in the heart of Kigali</subtitle>
+        <backgroundImage>https://source.unsplash.com/1600x900/?luxury,hotel</backgroundImage>
+        <cta>
+          <text>Book Now</text>
+          <link>#booking</link>
+        </cta>
+      </hero>
+    </page>
+
+    <page id="about">
+      <title>About Us</title>
+      <content>
+        <paragraph>Located in Kigali, Rwanda, The Cozy Hotel offers five-star service, premium suites, a rooftop restaurant, spa, and modern conference rooms. Your comfort is our priority.</paragraph>
+      </content>
+      <images>
+        <image>
+          <src>cozy images/hotel.jpg</src>
+          <alt>Hotel Room</alt>
+        </image>
+        <image>
+          <src>cozy images/resturant.jpg</src>
+          <alt>Restaurant</alt>
+        </image>
+        <image>
+          <src>cozy images/spa room.jpg</src>
+          <alt>Spa</alt>
+        </image>
+      </images>
+    </page>
+
+    <page id="rooms">
+      <title>Rooms &amp; Amenities</title>
+      <roomCategory id="deluxe">
+        <name>Deluxe Room</name>
+        <price>120</price>
+        <currency>USD</currency>
+        <period>per night</period>
+        <description>King-sized bed, city view, free Wi-Fi, and breakfast.</description>
+        <image>cozy images/delux room.jpg</image>
+        <features>
+          <feature>King-sized bed</feature>
+          <feature>City view</feature>
+          <feature>Free Wi-Fi</feature>
+          <feature>Breakfast included</feature>
+          <feature>Smart TV</feature>
+        </features>
+        <bookingLink>#booking?room=deluxe</bookingLink>
+      </roomCategory>
+
+      <roomCategory id="executive">
+        <name>Executive Suite</name>
+        <price>250</price>
+        <currency>USD</currency>
+        <period>per night</period>
+        <description>Living area, kitchenette, luxury bath, premium view.</description>
+        <image>cozy images/Executive Suite.jpg</image>
+        <features>
+          <feature>Separate living area</feature>
+          <feature>Kitchenette</feature>
+          <feature>Luxury bath</feature>
+          <feature>Premium view</feature>
+          <feature>Welcome drinks</feature>
+        </features>
+        <bookingLink>#booking?room=executive</bookingLink>
+      </roomCategory>
+
+      <roomCategory id="presidential">
+        <name>Presidential Suite</name>
+        <price>500</price>
+        <currency>USD</currency>
+        <period>per night</period>
+        <description>Private balcony, personal butler, Jacuzzi &amp; spa access.</description>
+        <image>cozy images/Presidential Suite.jpg</image>
+        <features>
+          <feature>Private balcony</feature>
+          <feature>Personal butler</feature>
+          <feature>Jacuzzi</feature>
+          <feature>Spa access</feature>
+          <feature>Chauffeur service</feature>
+        </features>
+        <bookingLink>#booking?room=presidential</bookingLink>
+      </roomCategory>
+    </page>
+
+    <page id="gallery">
+      <title>Gallery</title>
+      <images>
+        <image>
+          <src>cozy images/hotel.jpg</src>
+          <alt>Hotel Lobby</alt>
+          <category>hotel</category>
+        </image>
+        <image>
+          <src>cozy images/resturant.jpg</src>
+          <alt>Restaurant</alt>
+          <category>dining</category>
+        </image>
+        <image>
+          <src>cozy images/spa room.jpg</src>
+          <alt>Spa</alt>
+          <category>wellness</category>
+        </image>
+        <image>
+          <src>cozy images/pool.jpg</src>
+          <alt>Swimming Pool</alt>
+          <category>facilities</category>
+        </image>
+      </images>
+    </page>
+
+    <page id="booking">
+      <title>Book Your Stay</title>
+      <form>
+        <field type="date" name="check-in" label="Check-in Date" required="true"/>
+        <field type="date" name="check-out" label="Check-out Date" required="true"/>
+        <field type="select" name="adults" label="Adults" required="true">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </field>
+        <field type="select" name="children" label="Children">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </field>
+        <field type="select" name="room-type" label="Room Type" required="true">
+          <option value="deluxe">Deluxe Room ($120/night)</option>
+          <option value="executive">Executive Suite ($250/night)</option>
+          <option value="presidential">Presidential Suite ($500/night)</option>
+        </field>
+        <field type="text" name="name" label="Full Name" required="true"/>
+        <field type="email" name="email" label="Email" required="true"/>
+        <field type="tel" name="phone" label="Phone Number"/>
+        <field type="textarea" name="requests" label="Special Requests"/>
+        <submitText>Complete Booking</submitText>
+      </form>
+      <policies>
+        <cancellation>Free cancellation up to 48 hours before arrival</cancellation>
+        <payment>We accept Visa, MasterCard, and American Express</payment>
+      </policies>
+    </page>
+
+    <page id="contact">
+      <title>Contact Us</title>
+      <information>
+        <address>KN 5 Ave, Kigali City, Rwanda</address>
+        <phone>+250 788 123 456</phone>
+        <email>info@thecomzyhotel.rw</email>
+      </information>
+      <socialMedia>
+        <platform name="Facebook">https://facebook.com/thecozyhotel</platform>
+        <platform name="Instagram">https://instagram.com/thecozyhotel</platform>
+        <platform name="Twitter">https://twitter.com/thecozyhotel</platform>
+      </socialMedia>
+      <businessHours>
+        <day name="Monday-Friday">8:00 AM - 8:00 PM</day>
+        <day name="Saturday-Sunday">9:00 AM - 6:00 PM</day>
+      </businessHours>
+    </page>
+  </pages>
+
+  <chatbot>
+    <greeting>Hello! Welcome to The Cozy Hotel. How can I assist you today?</greeting>
+    <quickReplies>
+      <reply>Room availability</reply>
+      <reply>Booking process</reply>
+      <reply>Amenities</reply>
+      <reply>Contact info</reply>
+    </quickReplies>
+    <responses>
+      <response trigger="room">
+        We offer Deluxe Rooms ($120/night), Executive Suites ($250/night), and Presidential Suites ($500/night). Would you like details about a specific room type?
+      </response>
+      <response trigger="book">
+        You can book directly on our website or call us at +250 788 123 456. Our front desk is available 24/7.
+      </response>
+    </responses>
+  </chatbot>
+
+  <footer>
+    <copyright>&copy; 2025 The Cozy Hotel. All rights reserved.</copyright>
+    <links>
+      <link>
+        <name>Privacy Policy</name>
+        <url>/privacy</url>
+      </link>
+      <link>
+        <name>Terms of Service</name>
+        <url>/terms</url>
+      </link>
+      <link>
+        <name>Sitemap</name>
+        <url>/sitemap</url>
+      </link>
+    </links>
+  </footer>
+</website>
