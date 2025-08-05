@@ -5,155 +5,180 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Cozy Hotel – Kigali, Rwanda</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
- <!-- Header -->
-<header class="bg-white shadow-md">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="text-3xl font-bold text-yellow-600">The Cozy Hotel</h1>
-    
-    <!-- Desktop Navigation (shown on md screens and up) -->
-    <nav class="hidden md:flex space-x-6">
-      <a href="#" class="text-gray-700 hover:text-yellow-600">Home</a>
-      <a href="#about" class="text-gray-700 hover:text-yellow-600">About</a>
-      <a href="#contact" class="text-gray-700 hover:text-yellow-600">Contact</a>
-      <a href="#rooms" class="text-gray-700 hover:text-yellow-600">Rooms</a>
-      <a href="#" class="text-gray-700 hover:text-yellow-600">Gallery</a>
-    </nav>
-    
-    <!-- Mobile Menu Button (shown on sm screens) -->
-    <div class="md:hidden">
-      <button id="mobile-menu-button" class="text-gray-700 hover:text-yellow-600 focus:outline-none">
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
+  <!-- Header with Responsive Navigation -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <h1 class="text-3xl font-bold text-yellow-600">The Cozy Hotel</h1>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-6">
+          <a href="#" class="text-gray-700 hover:text-yellow-600 transition">Home</a>
+          <a href="#about" class="text-gray-700 hover:text-yellow-600 transition">About</a>
+          <a href="#rooms" class="text-gray-700 hover:text-yellow-600 transition">Rooms</a>
+          <a href="#gallery" class="text-gray-700 hover:text-yellow-600 transition">Gallery</a>
+          <a href="#contact" class="text-gray-700 hover:text-yellow-600 transition">Contact</a>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile Navigation (hidden by default) -->
+      <div id="mobile-menu" class="md:hidden hidden pb-4">
+        <div class="flex flex-col space-y-2">
+          <a href="#" class="block px-3 py-2 text-gray-700 hover:text-yellow-600 hover:bg-gray-100 rounded transition">Home</a>
+          <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-yellow-600 hover:bg-gray-100 rounded transition">About</a>
+          <a href="#rooms" class="block px-3 py-2 text-gray-700 hover:text-yellow-600 hover:bg-gray-100 rounded transition">Rooms</a>
+          <a href="#gallery" class="block px-3 py-2 text-gray-700 hover:text-yellow-600 hover:bg-gray-100 rounded transition">Gallery</a>
+          <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-yellow-600 hover:bg-gray-100 rounded transition">Contact</a>
+        </div>
+      </div>
     </div>
-  </div>
-  
-  <!-- Mobile Dropdown Menu (hidden by default) -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 px-6">
-    <div class="flex flex-col space-y-3">
-      <a href="#" class="text-gray-700 hover:text-yellow-600">Home</a>
-      <a href="#about" class="text-gray-700 hover:text-yellow-600">About</a>
-      <a href="#contact" class="text-gray-700 hover:text-yellow-600">Contact</a>
-      <a href="#rooms" class="text-gray-700 hover:text-yellow-600">Rooms</a>
-      <a href="#" class="text-gray-700 hover:text-yellow-600">Gallery</a>
-    </div>
-  </div>
-</header>
-
-<script>
-  // Toggle mobile menu
-  document.getElementById('mobile-menu-button').addEventListener('click', function() {
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden');
-  });
-</script>
+  </header>
 
   <!-- Hero Section -->
   <section class="relative bg-cover bg-center h-[500px] flex items-center justify-center text-white" style="background-image: url('https://source.unsplash.com/1600x900/?luxury,hotel');">
-    <div class="bg-black bg-opacity-60 p-10 rounded-xl text-center max-w-2xl">
-      <h2 class="text-4xl font-bold mb-4">Welcome to The Cozy Hotel</h2>
+    <div class="bg-black bg-opacity-60 p-8 sm:p-10 rounded-xl text-center max-w-2xl mx-4">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Welcome to The Cozy Hotel</h2>
       <p class="text-lg mb-6">Luxury, comfort, and tranquility in the heart of Kigali</p>
-      <a href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-6 rounded-xl transition">Book Now</a>
+      <a href="#contact" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-6 rounded-xl transition">Book Now</a>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-16 px-6 max-w-7xl mx-auto text-center">
+  <section id="about" class="py-16 px-4 sm:px-6 max-w-7xl mx-auto text-center">
     <h3 class="text-3xl font-bold text-gray-800 mb-4">About Us</h3>
     <p class="text-gray-600 max-w-2xl mx-auto">Located in Kigali, Rwanda, The Cozy Hotel offers five-star service, premium suites, a rooftop restaurant, spa, and modern conference rooms. Your comfort is our priority.</p>
     
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10">
-      <img src="cozy images/hotel.jpg" alt="Hotel Room" class="rounded-xl shadow-lg" />
-      <img src="cozy images/resturant.jpg" alt="Restaurant" class="rounded-xl shadow-lg" />
-      <img src="cozy images/spa room.jpg" alt="Spa" class="rounded-xl shadow-lg" />
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
+      <img src="cozy images/hotel.jpg" alt="Hotel Room" class="rounded-xl shadow-lg w-full h-48 object-cover" />
+      <img src="cozy images/resturant.jpg" alt="Restaurant" class="rounded-xl shadow-lg w-full h-48 object-cover" />
+      <img src="cozy images/spa room.jpg" alt="Spa" class="rounded-xl shadow-lg w-full h-48 object-cover" />
     </div>
   </section>
-<!-- Rooms Section -->
-<section id="rooms" class="py-16 bg-gray-100">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-10">Rooms & Amenities</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="cozy images/delux room.jpg" alt="Deluxe Room" class="w-full h-48 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl font-semibold">Deluxe Room</h3>
-          <p class="text-gray-600">King-sized bed, city view, free Wi-Fi, and breakfast.</p>
-          <p class="text-yellow-600 font-bold mt-2">$120/night</p>
+
+  <!-- Rooms Section -->
+  <section id="rooms" class="py-16 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-center mb-10">Rooms & Amenities</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105">
+          <img src="cozy images/delux room.jpg" alt="Deluxe Room" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Deluxe Room</h3>
+            <p class="text-gray-600">King-sized bed, city view, free Wi-Fi, and breakfast.</p>
+            <p class="text-yellow-600 font-bold mt-2">$120/night</p>
+            <button class="mt-3 w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded transition">View Details</button>
+          </div>
         </div>
-      </div>
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="cozy images/Executive Suite.jpg" alt="Executive Suite" class="w-full h-48 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl font-semibold">Executive Suite</h3>
-          <p class="text-gray-600">Living area, kitchenette, luxury bath, premium view.</p>
-          <p class="text-yellow-600 font-bold mt-2">$250/night</p>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105">
+          <img src="cozy images/Executive Suite.jpg" alt="Executive Suite" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Executive Suite</h3>
+            <p class="text-gray-600">Living area, kitchenette, luxury bath, premium view.</p>
+            <p class="text-yellow-600 font-bold mt-2">$250/night</p>
+            <button class="mt-3 w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded transition">View Details</button>
+          </div>
         </div>
-      </div>
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="cozy images/Presidential Suite.jpg" alt="Presidential Suite" class="w-full h-48 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl font-semibold">Presidential Suite</h3>
-          <p class="text-gray-600">Private balcony, personal butler, Jacuzzi & spa access.</p>
-          <p class="text-yellow-600 font-bold mt-2">$500/night</p>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105">
+          <img src="cozy images/Presidential Suite.jpg" alt="Presidential Suite" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Presidential Suite</h3>
+            <p class="text-gray-600">Private balcony, personal butler, Jacuzzi & spa access.</p>
+            <p class="text-yellow-600 font-bold mt-2">$500/night</p>
+            <button class="mt-3 w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded transition">View Details</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 px-4 sm:px-6 max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-10">Gallery</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <img src="cozy images/Hotel Lobby.jpg" alt="Hotel Lobby" class="rounded-lg shadow-md w-full h-48 object-cover">
+      <img src="cozy images/swimming pool.jpg" alt="Swimming Pool" class="rounded-lg shadow-md w-full h-48 object-cover">
+      <img src="cozy images/fitness centre.jpg" alt="Fitness Center" class="rounded-lg shadow-md w-full h-48 object-cover">
+      <img src="cozy images/hotel bar.jpg" alt="Hotel Bar" class="rounded-lg shadow-md w-full h-48 object-cover">
+      <img src="cozy images/city view.jpg" alt="City View" class="rounded-lg shadow-md w-full h-48 object-cover">
+      <img src="cozy images/Spa Area.jpg" alt="Spa Area" class="rounded-lg shadow-md w-full h-48 object-cover">
+      <img src="cozy images/event space.jpg" alt="Event Space" class="rounded-lg shadow-md w-full h-48 object-cover">
+      <img src="cozy images/dinning Area.jpg" alt="Dining Area" class="rounded-lg shadow-md w-full h-48 object-cover">
+    </div>
+  </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-white px-6">
+  <section id="contact" class="py-16 bg-white px-4 sm:px-6">
     <div class="max-w-7xl mx-auto">
       <h3 class="text-3xl font-bold text-center text-gray-800 mb-10">Get In Touch</h3>
-      <div class="grid md:grid-cols-2 gap-10">
+      <div class="grid md:grid-cols-2 gap-8">
         
         <!-- Contact Info -->
         <div class="space-y-6">
           <!-- Phone -->
           <div class="flex items-center gap-3 text-gray-700">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 6.75C2.25 5.784 3.034 5 4 5h1.28a1.5 1.5 0 011.42.948l1.342 3.162a1.5 1.5 0 01-.294 1.602l-1.228 1.228a14.813 14.813 0 006.75 6.75l1.228-1.228a1.5 1.5 0 011.602-.294l3.162 1.342A1.5 1.5 0 0119 18.72V20c0 .966-.784 1.75-1.75 1.75H18c-9.941 0-15.75-5.809-15.75-15.75z" />
-            </svg>
+            <i class="fas fa-phone text-yellow-500"></i>
             <span>+250 788 123 456</span>
           </div>
 
           <!-- Email -->
           <a href="mailto:info@thecomzyhotel.rw" class="flex items-center gap-3 text-gray-700 hover:text-yellow-600 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6.75C3 5.784 3.784 5 4.75 5h14.5c.966 0 1.75.784 1.75 1.75v10.5c0 .966-.784 1.75-1.75 1.75H4.75A1.75 1.75 0 013 17.25V6.75zm1.933-.433L12 13.5l7.067-7.183" />
-            </svg>
+            <i class="fas fa-envelope text-yellow-500"></i>
             <span class="underline underline-offset-2">info@thecomzyhotel.rw</span>
           </a>
 
           <!-- Location -->
           <div class="flex items-center gap-3 text-gray-700">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2.25c-3.733 0-6.75 3.017-6.75 6.75 0 4.406 6.75 12.75 6.75 12.75s6.75-8.344 6.75-12.75c0-3.733-3.017-6.75-6.75-6.75zM12 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" />
-            </svg>
+            <i class="fas fa-map-marker-alt text-yellow-500"></i>
             <span>KN 5 Ave, Kigali City, Rwanda</span>
+          </div>
+          
+          <!-- Social Media -->
+          <div class="flex space-x-4 pt-4">
+            <a href="#" class="text-gray-600 hover:text-yellow-500 transition">
+              <i class="fab fa-facebook-f text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-600 hover:text-yellow-500 transition">
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-600 hover:text-yellow-500 transition">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-600 hover:text-yellow-500 transition">
+              <i class="fab fa-tripadvisor text-xl"></i>
+            </a>
           </div>
         </div>
 
         <!-- Contact Form -->
         <div class="bg-gray-50 p-6 rounded-2xl shadow">
-          <form action="#" method="POST" class="space-y-4">
+          <form id="contact-form" class="space-y-4">
             <div>
               <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
-              <input type="text" id="name" name="name" required class="mt-1 block w-full p-2.5 border border-gray-300 rounded-xl focus:ring-yellow-500 focus:border-yellow-500" />
+              <input type="text" id="name" name="name" required 
+                     class="mt-1 block w-full p-2.5 border border-gray-300 rounded-xl focus:ring-yellow-500 focus:border-yellow-500">
             </div>
 
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-              <input type="email" id="email" name="email" required class="mt-1 block w-full p-2.5 border border-gray-300 rounded-xl focus:ring-yellow-500 focus:border-yellow-500" />
+              <input type="email" id="email" name="email" required 
+                     class="mt-1 block w-full p-2.5 border border-gray-300 rounded-xl focus:ring-yellow-500 focus:border-yellow-500">
             </div>
 
             <div>
               <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
-              <textarea id="message" name="message" rows="4" required class="mt-1 block w-full p-2.5 border border-gray-300 rounded-xl focus:ring-yellow-500 focus:border-yellow-500"></textarea>
+              <textarea id="message" name="message" rows="4" required 
+                        class="mt-1 block w-full p-2.5 border border-gray-300 rounded-xl focus:ring-yellow-500 focus:border-yellow-500"></textarea>
             </div>
 
             <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2.5 px-4 rounded-xl transition">
@@ -166,10 +191,331 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-yellow-500 text-white py-6 text-center">
-    <p>&copy; 2025 The Comzy Hotel. All rights reserved.</p>
+  <footer class="bg-yellow-500 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h4 class="text-lg font-bold mb-4">The Cozy Hotel</h4>
+          <p>Your luxury retreat in the heart of Kigali, offering world-class amenities and Rwandan hospitality.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:underline">Home</a></li>
+            <li><a href="#rooms" class="hover:underline">Rooms & Suites</a></li>
+            <li><a href="#gallery" class="hover:underline">Gallery</a></li>
+            <li><a href="#contact" class="hover:underline">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+          <form class="flex">
+            <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full focus:outline-none">
+            <button type="submit" class="bg-black text-white px-4 py-2 rounded-r-lg hover:bg-gray-800 transition">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+          <p class="text-sm mt-2">Subscribe for special offers and updates.</p>
+        </div>
+      </div>
+      <div class="border-t border-yellow-400 mt-8 pt-6 text-center">
+        <p>&copy; 2025 The Cozy Hotel. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
+  <!-- Chatbot Widget -->
+  <div id="chatbot-container" class="fixed bottom-6 right-6 z-50 hidden">
+    <div class="bg-white rounded-t-xl shadow-xl w-full max-w-xs sm:max-w-sm h-[500px] flex flex-col">
+      <!-- Chat Header -->
+      <div class="bg-yellow-500 text-white p-4 rounded-t-xl flex justify-between items-center">
+        <h3 class="font-bold">Cozy Hotel Assistant</h3>
+        <div class="flex space-x-2">
+          <button id="minimize-chat" class="text-white hover:text-gray-200">
+            <i class="fas fa-minus"></i>
+          </button>
+          <button id="close-chat" class="text-white hover:text-gray-200">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Chat Messages -->
+      <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3">
+        <div class="bg-gray-100 p-3 rounded-lg text-sm">
+          <p>Hello! Welcome to The Cozy Hotel. How can I assist you today?</p>
+          <p class="mt-2 text-xs text-gray-500">Here are some things I can help with:</p>
+          <ul class="list-disc pl-5 text-xs text-gray-500 mt-1">
+            <li>Room availability</li>
+            <li>Booking information</li>
+            <li>Hotel amenities</li>
+            <li>Local recommendations</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Chat Input -->
+      <div class="p-3 border-t">
+        <div class="flex space-x-2">
+          <input type="text" id="chat-input" placeholder="Type your message..." 
+                 class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-yellow-500">
+          <button id="send-message" class="bg-yellow-500 text-white rounded-lg px-3 py-2 hover:bg-yellow-600 transition">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-1">
+          <button class="quick-reply-btn bg-gray-100 hover:bg-gray-200 text-xs px-2 py-1 rounded" data-message="Room availability">Room availability</button>
+          <button class="quick-reply-btn bg-gray-100 hover:bg-gray-200 text-xs px-2 py-1 rounded" data-message="Booking process">Booking process</button>
+          <button class="quick-reply-btn bg-gray-100 hover:bg-gray-200 text-xs px-2 py-1 rounded" data-message="Amenities">Amenities</button>
+          <button class="quick-reply-btn bg-gray-100 hover:bg-gray-200 text-xs px-2 py-1 rounded" data-message="Contact info">Contact info</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Toggle Button -->
+  <button id="chat-toggle" class="fixed bottom-6 right-6 bg-yellow-500 text-white p-4 rounded-full shadow-lg hover:bg-yellow-600 transition z-40">
+    <i class="fas fa-comment-dots text-xl"></i>
+  </button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+      
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+      
+      // Smooth scrolling for all links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Form submission handling
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('Thank you for your message! We will get back to you soon.');
+          this.reset();
+        });
+      }
+      
+      // Chatbot functionality
+      const chatbotContainer = document.getElementById('chatbot-container');
+      const chatToggle = document.getElementById('chat-toggle');
+      const minimizeChat = document.getElementById('minimize-chat');
+      const closeChat = document.getElementById('close-chat');
+      const chatMessages = document.getElementById('chat-messages');
+      const chatInput = document.getElementById('chat-input');
+      const sendMessageBtn = document.getElementById('send-message');
+      const quickReplyBtns = document.querySelectorAll('.quick-reply-btn');
+      
+      // Toggle chat visibility
+      chatToggle.addEventListener('click', function() {
+        chatbotContainer.classList.toggle('hidden');
+      });
+      
+      // Minimize chat
+      minimizeChat.addEventListener('click', function() {
+        chatbotContainer.classList.add('hidden');
+      });
+      
+      // Close chat
+      closeChat.addEventListener('click', function() {
+        chatbotContainer.classList.add('hidden');
+      });
+      
+      // Send message function
+      function sendMessage() {
+        const message = chatInput.value.trim();
+        if (message) {
+          addMessage(message, 'user');
+          chatInput.value = '';
+          setTimeout(() => {
+            generateBotResponse(message);
+          }, 500);
+        }
+      }
+      
+      // Send message on button click
+      sendMessageBtn.addEventListener('click', sendMessage);
+      
+      // Send message on Enter key
+      chatInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          sendMessage();
+        }
+      });
+      
+      // Quick reply buttons
+      quickReplyBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const message = this.getAttribute('data-message');
+          addMessage(message, 'user');
+          setTimeout(() => {
+            generateBotResponse(message);
+          }, 500);
+        });
+      });
+      
+      // Add message to chat
+      function addMessage(text, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('flex', 'items-end', 'space-x-2');
+        
+        if (sender === 'user') {
+          messageDiv.classList.add('justify-end');
+          messageDiv.innerHTML = `
+            <div class="bg-yellow-100 p-3 rounded-lg text-sm max-w-xs">
+              <p>${text}</p>
+            </div>
+          `;
+        } else {
+          messageDiv.classList.add('justify-start');
+          messageDiv.innerHTML = `
+            <div class="bg-gray-100 p-3 rounded-lg text-sm max-w-xs">
+              <p>${text}</p>
+            </div>
+          `;
+        }
+        
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+      
+      // Generate bot response
+      function generateBotResponse(userMessage) {
+        let response = '';
+        const lowerMessage = userMessage.toLowerCase();
+        
+        if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+          response = 'Hello! Welcome to The Cozy Hotel. How can I assist you today?';
+        } 
+        else if (lowerMessage.includes('room') || lowerMessage.includes('availability')) {
+          response = 'We currently have the following rooms available:<br><br>' +
+                     '• Deluxe Room - $120/night<br>' +
+                     '• Executive Suite - $250/night<br>' +
+                     '• Presidential Suite - $500/night<br><br>' +
+                     'Would you like to check availability for specific dates?';
+        }
+        else if (lowerMessage.includes('book') || lowerMessage.includes('reservation')) {
+          response = 'You can make a booking directly through our website or by calling +250 788 123 456. ' +
+                     'Would you like me to direct you to our booking page?';
+        }
+        else if (lowerMessage.includes('amenit') || lowerMessage.includes('facilit')) {
+          response = 'Our hotel offers:<br><br>' +
+                     '• Rooftop restaurant with city views<br>' +
+                     '• Full-service spa and wellness center<br>' +
+                     '• Modern conference rooms<br>' +
+                     '• 24-hour room service<br>' +
+                     '• Free high-speed WiFi<br>' +
+                     '• Swimming pool<br><br>' +
+                     'Is there a specific amenity you\'d like more information about?';
+        }
+        else if (lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('email')) {
+          response = 'You can reach us at:<br><br>' +
+                     '• Phone: +250 788 123 456<br>' +
+                     '• Email: info@thecomzyhotel.rw<br>' +
+                     '• Address: KN 5 Ave, Kigali City, Rwanda<br><br>' +
+                     'Our front desk is available 24/7 to assist you.';
+        }
+        else if (lowerMessage.includes('restaurant') || lowerMessage.includes('dining')) {
+          response = 'Our "Rooftop Vista" restaurant offers:<br><br>' +
+                     '• Breakfast: 6:30 AM - 10:30 AM (complimentary for guests)<br>' +
+                     '• Lunch: 12:00 PM - 3:00 PM<br>' +
+                     '• Dinner: 6:00 PM - 10:30 PM<br><br>' +
+                     'Specialty: Try our "Ibihaza" - a traditional Rwandan dish with plantains and beef.';
+        }
+        else if (lowerMessage.includes('spa')) {
+          response = 'The "Serenity Spa" at Cozy Hotel features:<br><br>' +
+                     '• Traditional Rwandan massage ($75/90min)<br>' +
+                     '• Hot stone therapy ($65/60min)<br>' +
+                     '• Couples treatment ($120/90min)<br><br>' +
+                     'Open daily 9:00 AM - 8:00 PM. Book at extension 222 from your room.';
+        }
+        else if (lowerMessage.includes('check-in') || lowerMessage.includes('check out')) {
+          response = 'Our standard check-in time is 3:00 PM and check-out is at 11:00 AM. ' +
+                     'Early check-in and late check-out may be available upon request, subject to availability.';
+        }
+        else if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('rate')) {
+          response = 'Our current room rates are:<br><br>' +
+                     '• Deluxe Room: $120/night<br>' +
+                     '• Executive Suite: $250/night<br>' +
+                     '• Presidential Suite: $500/night<br><br>' +
+                     'Prices may vary during peak seasons. Would you like to check availability for specific dates?';
+        }
+        else if (lowerMessage.includes('breakfast') || lowerMessage.includes('meal')) {
+          response = 'Our complimentary breakfast is served daily from 6:30 AM to 10:30 AM in our rooftop restaurant. ' +
+                     'We offer a buffet with continental options, Rwandan specialties, and made-to-order eggs. ' +
+                     'Vegetarian and gluten-free options are available upon request.';
+        }
+        else if (lowerMessage.includes('parking') || lowerMessage.includes('car')) {
+          response = 'We offer secure underground parking for guests at $10 per night. ' +
+                     'Valet parking is available for an additional $5. Electric vehicle charging stations are also available.';
+        }
+        else if (lowerMessage.includes('wifi') || lowerMessage.includes('internet')) {
+          response = 'We provide complimentary high-speed WiFi throughout the hotel. ' +
+                     'The network name is "Cozy_Guest" and no password is required. ' +
+                     'Premium faster WiFi is available for $5/day if you need higher bandwidth.';
+        }
+        else if (lowerMessage.includes('recommend') || lowerMessage.includes('see') || lowerMessage.includes('do')) {
+          response = 'Our concierge recommends these Kigali attractions:<br><br>' +
+                     '• <strong>Kigali Genocide Memorial</strong> - 15min walk<br>' +
+                     '• <strong>Kimironko Market</strong> - 10min by taxi<br>' +
+                     '• <strong>Inema Arts Center</strong> - 5min drive<br>' +
+                     '• <strong>Nyamirambo Women\'s Center tour</strong> - 20min drive<br><br>' +
+                     'We can arrange guided tours - just ask at reception!';
+        }
+        else if (lowerMessage.includes('special') || lowerMessage.includes('offer') || lowerMessage.includes('promo')) {
+          response = 'Current special offers:<br><br>' +
+                     '🌿 <strong>Long Stay Discount</strong>: 15% off stays of 7+ nights<br>' +
+                     '💑 <strong>Honeymoon Package</strong>: Champagne, spa credit & late checkout<br>' +
+                     '👨‍👩‍👧‍👦 <strong>Family Deal</strong>: Kids stay & eat free<br><br>' +
+                     'Ask our reservations team for details at +250 788 123 456';
+        }
+        else if (lowerMessage.includes('français') || lowerMessage.includes('french')) {
+          response = 'Nous parlons français! Voici quelques informations:<br><br>' +
+                     '• Heures d\'enregistrement: 15h00<br>' +
+                     '• Petit-déjeuner: 6h30 - 10h30<br>' +
+                     '• Service en chambre 24h/24<br><br>' +
+                     'Besoin d\'aide en français? Composez le 123 depuis votre chambre.';
+        }
+        else if (lowerMessage.includes('kinyarwanda')) {
+          response = 'Turavuga Ikinyarwanda! Hebu nibyo dushobora kukubwira:<br><br>' +
+                     '• Amasaha yo kwiyandikisha: 15h00<br>' +
+                     '• Ibyokurya vuba: 6h30 - 10h30<br>' +
+                     '• Serivisi mu icyumba isanzwe<br><br>' +
+                     'Ukeneye ubufasha mu Kinyarwanda? Vuga muri 123 uva mu icyumba cyawe.';
+        }
+        else {
+          response = 'I\'m sorry, I didn\'t understand that. Could you please rephrase your question? ' +
+                     'I can help with information about rooms, bookings, amenities, and more.';
+        }
+        
+        addMessage(response, 'bot');
+      }
+    });
+  </script>
 </body>
 </html>
-
