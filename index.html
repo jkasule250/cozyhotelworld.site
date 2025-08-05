@@ -66,41 +66,260 @@
     </div>
   </section>
 
-  <!-- Rooms Section -->
-  <section id="rooms" class="py-16 bg-gray-100">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl font-bold text-center mb-10">Rooms & Amenities</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105">
-          <img src="cozy images/delux room.jpg" alt="Deluxe Room" class="w-full h-48 object-cover">
-          <div class="p-5">
-            <h3 class="text-xl font-semibold">Deluxe Room</h3>
-            <p class="text-gray-600">King-sized bed, city view, free Wi-Fi, and breakfast.</p>
-            <p class="text-yellow-600 font-bold mt-2">$120/night</p>
-            <button class="mt-3 w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded transition">View Details</button>
-          </div>
+ <!-- Rooms Section -->
+<section id="rooms" class="py-16 bg-gray-100">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <h2 class="text-3xl font-bold text-center mb-10">Rooms & Amenities</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Deluxe Room Card -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105">
+        <img src="cozy images/delux room.jpg" alt="Deluxe Room" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold">Deluxe Room</h3>
+          <p class="text-gray-600">King-sized bed, city view, free Wi-Fi, and breakfast.</p>
+          <p class="text-yellow-600 font-bold mt-2">$120/night</p>
+          <button onclick="openRoomModal('deluxe')" class="mt-3 w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded transition">
+            View Details
+          </button>
         </div>
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105">
-          <img src="cozy images/Executive Suite.jpg" alt="Executive Suite" class="w-full h-48 object-cover">
-          <div class="p-5">
-            <h3 class="text-xl font-semibold">Executive Suite</h3>
-            <p class="text-gray-600">Living area, kitchenette, luxury bath, premium view.</p>
-            <p class="text-yellow-600 font-bold mt-2">$250/night</p>
-            <button class="mt-3 w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded transition">View Details</button>
-          </div>
+      </div>
+
+      <!-- Executive Suite Card -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105">
+        <img src="cozy images/Executive Suite.jpg" alt="Executive Suite" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold">Executive Suite</h3>
+          <p class="text-gray-600">Living area, kitchenette, luxury bath, premium view.</p>
+          <p class="text-yellow-600 font-bold mt-2">$250/night</p>
+          <button onclick="openRoomModal('executive')" class="mt-3 w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded transition">
+            View Details
+          </button>
         </div>
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105">
-          <img src="cozy images/Presidential Suite.jpg" alt="Presidential Suite" class="w-full h-48 object-cover">
-          <div class="p-5">
-            <h3 class="text-xl font-semibold">Presidential Suite</h3>
-            <p class="text-gray-600">Private balcony, personal butler, Jacuzzi & spa access.</p>
-            <p class="text-yellow-600 font-bold mt-2">$500/night</p>
-            <button class="mt-3 w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded transition">View Details</button>
-          </div>
+      </div>
+
+      <!-- Presidential Suite Card -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105">
+        <img src="cozy images/Presidential Suite.jpg" alt="Presidential Suite" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold">Presidential Suite</h3>
+          <p class="text-gray-600">Private balcony, personal butler, Jacuzzi & spa access.</p>
+          <p class="text-yellow-600 font-bold mt-2">$500/night</p>
+          <button onclick="openRoomModal('presidential')" class="mt-3 w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded transition">
+            View Details
+          </button>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Room Detail Modals -->
+<!-- Deluxe Room Modal -->
+<div id="deluxe-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+    <div class="relative">
+      <button onclick="closeModal('deluxe-modal')" class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="md:sticky md:top-0">
+          <img src="cozy images/delux room.jpg" alt="Deluxe Room" class="w-full h-auto md:h-[70vh] object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Deluxe Room</h3>
+          <p class="text-yellow-600 text-xl font-semibold mb-4">$120/night</p>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Room Features</h4>
+            <ul class="grid grid-cols-2 gap-2 text-sm">
+              <li class="flex items-center"><i class="fas fa-bed mr-2 text-yellow-500"></i> King-sized bed</li>
+              <li class="flex items-center"><i class="fas fa-wifi mr-2 text-yellow-500"></i> Free Wi-Fi</li>
+              <li class="flex items-center"><i class="fas fa-utensils mr-2 text-yellow-500"></i> Breakfast included</li>
+              <li class="flex items-center"><i class="fas fa-tv mr-2 text-yellow-500"></i> Smart TV</li>
+              <li class="flex items-center"><i class="fas fa-city mr-2 text-yellow-500"></i> City view</li>
+              <li class="flex items-center"><i class="fas fa-coffee mr-2 text-yellow-500"></i> Coffee maker</li>
+            </ul>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Room Description</h4>
+            <p class="text-gray-600">Our Deluxe Rooms offer a perfect blend of comfort and style. Featuring a plush king-sized bed with premium linens, these rooms provide stunning views of Kigali city. Enjoy complimentary breakfast each morning and stay connected with high-speed WiFi. The spacious marble bathroom includes luxury toiletries and a rainfall shower.</p>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Amenities</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Air conditioning</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Safe deposit box</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Mini-bar</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">24-hour room service</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Daily housekeeping</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Hair dryer</span>
+            </div>
+          </div>
+          
+          <a href="#contact" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white text-center font-medium py-3 px-6 rounded transition">
+            Book Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Executive Suite Modal -->
+<div id="executive-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+    <div class="relative">
+      <button onclick="closeModal('executive-modal')" class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="md:sticky md:top-0">
+          <img src="cozy images/Executive Suite.jpg" alt="Executive Suite" class="w-full h-auto md:h-[70vh] object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Executive Suite</h3>
+          <p class="text-yellow-600 text-xl font-semibold mb-4">$250/night</p>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Suite Features</h4>
+            <ul class="grid grid-cols-2 gap-2 text-sm">
+              <li class="flex items-center"><i class="fas fa-couch mr-2 text-yellow-500"></i> Separate living area</li>
+              <li class="flex items-center"><i class="fas fa-utensils mr-2 text-yellow-500"></i> Kitchenette</li>
+              <li class="flex items-center"><i class="fas fa-bath mr-2 text-yellow-500"></i> Luxury bathroom</li>
+              <li class="flex items-center"><i class="fas fa-mountain mr-2 text-yellow-500"></i> Premium view</li>
+              <li class="flex items-center"><i class="fas fa-wine-glass-alt mr-2 text-yellow-500"></i> Welcome drinks</li>
+              <li class="flex items-center"><i class="fas fa-desktop mr-2 text-yellow-500"></i> Work desk</li>
+            </ul>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Suite Description</h4>
+            <p class="text-gray-600">The Executive Suite offers spacious accommodation with separate living and sleeping areas. The elegant living space features comfortable seating and a dining area, while the bedroom boasts a king-sized bed with premium bedding. The kitchenette includes a microwave, refrigerator, and Nespresso machine. The luxurious marble bathroom features a deep soaking tub and separate rainfall shower.</p>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Amenities</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Executive lounge access</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Complimentary pressing</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Premium toiletries</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Bathrobes & slippers</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Evening turndown</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Express check-in/out</span>
+            </div>
+          </div>
+          
+          <a href="#contact" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white text-center font-medium py-3 px-6 rounded transition">
+            Book Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Presidential Suite Modal -->
+<div id="presidential-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+    <div class="relative">
+      <button onclick="closeModal('presidential-modal')" class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="md:sticky md:top-0">
+          <img src="cozy images/Presidential Suite.jpg" alt="Presidential Suite" class="w-full h-auto md:h-[70vh] object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Presidential Suite</h3>
+          <p class="text-yellow-600 text-xl font-semibold mb-4">$500/night</p>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Suite Features</h4>
+            <ul class="grid grid-cols-2 gap-2 text-sm">
+              <li class="flex items-center"><i class="fas fa-door-open mr-2 text-yellow-500"></i> Private balcony</li>
+              <li class="flex items-center"><i class="fas fa-user-tie mr-2 text-yellow-500"></i> Personal butler</li>
+              <li class="flex items-center"><i class="fas fa-hot-tub mr-2 text-yellow-500"></i> Jacuzzi</li>
+              <li class="flex items-center"><i class="fas fa-spa mr-2 text-yellow-500"></i> Spa access</li>
+              <li class="flex items-center"><i class="fas fa-car mr-2 text-yellow-500"></i> Chauffeur service</li>
+              <li class="flex items-center"><i class="fas fa-umbrella-beach mr-2 text-yellow-500"></i> Lounge area</li>
+            </ul>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Suite Description</h4>
+            <p class="text-gray-600">The epitome of luxury, our Presidential Suite offers expansive living space with a grand living room, formal dining area, and private study. The master bedroom features a king-sized canopy bed and his-and-hers walk-in closets. The lavish bathroom includes a Jacuzzi tub, steam shower, and premium amenities. Enjoy panoramic city views from your private balcony and 24-hour butler service to attend to your every need.</p>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Amenities</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Private check-in</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Complimentary minibar</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Bose sound system</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Daily fruit basket</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">24-hour butler</span>
+              <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Luxury bath amenities</span>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Special Services</h4>
+            <p class="text-gray-600">Guests of the Presidential Suite enjoy exclusive benefits including complimentary airport transfers, private check-in/out, daily spa credit, and access to the executive lounge with complimentary food and beverages throughout the day.</p>
+          </div>
+          
+          <a href="#contact" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white text-center font-medium py-3 px-6 rounded transition">
+            Book Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Modal control functions
+  function openRoomModal(roomType) {
+    document.getElementById(`${roomType}-modal`).classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+  }
+
+  function closeModal(modalId) {
+    document.getElementById(modalId).classList.add('hidden');
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+  }
+
+  // Close modal when clicking outside content
+  window.onclick = function(event) {
+    if (event.target.classList.contains('bg-black')) {
+      const modals = document.querySelectorAll('[id$="-modal"]');
+      modals.forEach(modal => {
+        modal.classList.add('hidden');
+      });
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      const modals = document.querySelectorAll('[id$="-modal"]');
+      modals.forEach(modal => {
+        if (!modal.classList.contains('hidden')) {
+          modal.classList.add('hidden');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    }
+  });
+</script>
 
   <!-- Gallery Section -->
   <section id="gallery" class="py-16 px-4 sm:px-6 max-w-7xl mx-auto">
@@ -519,3 +738,4 @@
   </script>
 </body>
 </html>
+
