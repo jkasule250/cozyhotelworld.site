@@ -22,6 +22,7 @@
           <a href="#rooms" class="text-gray-700 hover:text-yellow-600 transition">Rooms</a>
           <a href="#gallery" class="text-gray-700 hover:text-yellow-600 transition">Gallery</a>
           <a href="#contact" class="text-gray-700 hover:text-yellow-600 transition">Contact</a>
+          <a href="#booking" class="bg-yellow-500 text-white font-semibold py-2 px-4 rounded hover:bg-yellow-600 transition">Book Now</a>
         </nav>
         
         <!-- Mobile Menu Button -->
@@ -40,6 +41,7 @@
           <a href="#rooms" class="block px-3 py-2 text-gray-700 hover:text-yellow-600 hover:bg-gray-100 rounded transition">Rooms</a>
           <a href="#gallery" class="block px-3 py-2 text-gray-700 hover:text-yellow-600 hover:bg-gray-100 rounded transition">Gallery</a>
           <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-yellow-600 hover:bg-gray-100 rounded transition">Contact</a>
+          <a href="#booking" class="block px-3 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-600 transition text-center">Book Now</a>
         </div>
       </div>
     </div>
@@ -50,7 +52,7 @@
     <div class="bg-black bg-opacity-60 p-8 sm:p-10 rounded-xl text-center max-w-2xl mx-4">
       <h2 class="text-3xl sm:text-4xl font-bold mb-4">Welcome to The Cozy Hotel</h2>
       <p class="text-lg mb-6">Luxury, comfort, and tranquility in the heart of Kigali</p>
-      <a href="#contact" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-6 rounded-xl transition">Book Now</a>
+      <a href="#booking" class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-6 rounded-xl transition">Book Now</a>
     </div>
   </section>
 
@@ -66,7 +68,7 @@
     </div>
   </section>
 
- <!-- Rooms Section -->
+  <!-- Rooms Section -->
 <section id="rooms" class="py-16 bg-gray-100">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <h2 class="text-3xl font-bold text-center mb-10">Rooms & Amenities</h2>
@@ -160,7 +162,7 @@
             </div>
           </div>
           
-          <a href="#contact" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white text-center font-medium py-3 px-6 rounded transition">
+          <a href="#booking" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white text-center font-medium py-3 px-6 rounded transition">
             Book Now
           </a>
         </div>
@@ -215,7 +217,7 @@
             </div>
           </div>
           
-          <a href="#contact" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white text-center font-medium py-3 px-6 rounded transition">
+          <a href="#booking" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white text-center font-medium py-3 px-6 rounded transition">
             Book Now
           </a>
         </div>
@@ -275,7 +277,7 @@
             <p class="text-gray-600">Guests of the Presidential Suite enjoy exclusive benefits including complimentary airport transfers, private check-in/out, daily spa credit, and access to the executive lounge with complimentary food and beverages throughout the day.</p>
           </div>
           
-          <a href="#contact" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white text-center font-medium py-3 px-6 rounded transition">
+          <a href="#booking" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white text-center font-medium py-3 px-6 rounded transition">
             Book Now
           </a>
         </div>
@@ -318,6 +320,261 @@
         }
       });
     }
+  });
+</script>
+
+ <!-- Booking Section -->
+ <section id="booking" class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800">Book Your Stay</h2>
+      <p class="text-gray-600 mt-2">Experience luxury and comfort at The Cozy Hotel</p>
+    </div>
+
+    <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden">
+      <div class="grid md:grid-cols-2">
+        <!-- Booking Form -->
+        <div class="p-8">
+          <form id="booking-form" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="check-in" class="block text-sm font-medium text-gray-700 mb-1">Check-in Date</label>
+                <input type="date" id="check-in" name="check-in" required 
+                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500">
+              </div>
+              <div>
+                <label for="check-out" class="block text-sm font-medium text-gray-700 mb-1">Check-out Date</label>
+                <input type="date" id="check-out" name="check-out" required 
+                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="adults" class="block text-sm font-medium text-gray-700 mb-1">Adults</label>
+                <select id="adults" name="adults" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500">
+                  <option value="1">1</option>
+                  <option value="2" selected>2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <div>
+                <label for="children" class="block text-sm font-medium text-gray-700 mb-1">Children</label>
+                <select id="children" name="children" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500">
+                  <option value="0" selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="room-type" class="block text-sm font-medium text-gray-700 mb-1">Room Type</label>
+              <select id="room-type" name="room-type" required 
+                      class="w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500">
+                <option value="" disabled selected>Select room type</option>
+                <option value="deluxe">Deluxe Room - $120/night</option>
+                <option value="executive">Executive Suite - $250/night</option>
+                <option value="presidential">Presidential Suite - $500/night</option>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <input type="text" id="name" name="name" required 
+                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input type="email" id="email" name="email" required 
+                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500">
+              </div>
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+              <input type="tel" id="phone" name="phone" 
+                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500">
+            </div>
+
+            <div>
+              <label for="special-requests" class="block text-sm font-medium text-gray-700 mb-1">Special Requests</label>
+              <textarea id="special-requests" name="special-requests" rows="3" 
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-3 px-6 rounded-lg transition">
+              Complete Booking
+            </button>
+          </form>
+        </div>
+
+        <!-- Booking Summary -->
+        <div class="bg-yellow-50 p-8 border-l border-yellow-100">
+          <h3 class="text-xl font-semibold text-gray-800 mb-6">Your Booking Summary</h3>
+          
+          <div class="space-y-6">
+            <div class="flex justify-between items-center pb-4 border-b border-yellow-100">
+              <span class="text-gray-600">Room Type:</span>
+              <span id="summary-room-type" class="font-medium">Not selected</span>
+            </div>
+            
+            <div class="flex justify-between items-center pb-4 border-b border-yellow-100">
+              <span class="text-gray-600">Check-in:</span>
+              <span id="summary-check-in" class="font-medium">--/--/----</span>
+            </div>
+            
+            <div class="flex justify-between items-center pb-4 border-b border-yellow-100">
+              <span class="text-gray-600">Check-out:</span>
+              <span id="summary-check-out" class="font-medium">--/--/----</span>
+            </div>
+            
+            <div class="flex justify-between items-center pb-4 border-b border-yellow-100">
+              <span class="text-gray-600">Nights:</span>
+              <span id="summary-nights" class="font-medium">0</span>
+            </div>
+            
+            <div class="flex justify-between items-center pb-4 border-b border-yellow-100">
+              <span class="text-gray-600">Guests:</span>
+              <span id="summary-guests" class="font-medium">0 Adults, 0 Children</span>
+            </div>
+            
+            <div class="pt-4">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-gray-600">Room Rate:</span>
+                <span id="summary-room-rate" class="font-medium">$0</span>
+              </div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-gray-600">Taxes & Fees:</span>
+                <span id="summary-taxes" class="font-medium">$0</span>
+              </div>
+              <div class="flex justify-between items-center text-lg font-semibold pt-2 mt-4 border-t border-yellow-100">
+                <span>Total:</span>
+                <span id="summary-total" class="text-yellow-600">$0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 bg-white p-4 rounded-lg border border-yellow-100">
+            <h4 class="font-medium text-gray-800 mb-2">Special Offers</h4>
+            <ul class="text-sm space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
+                <span>15% discount for stays of 7+ nights</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
+                <span>Free airport transfer for Presidential Suite</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
+                <span>Complimentary spa credit for Executive Suites</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Update booking summary in real-time
+    const bookingForm = document.getElementById('booking-form');
+    const roomPrices = {
+      'deluxe': 120,
+      'executive': 250,
+      'presidential': 500
+    };
+
+    // Calculate and update summary
+    function updateBookingSummary() {
+      const checkIn = new Date(document.getElementById('check-in').value);
+      const checkOut = new Date(document.getElementById('check-out').value);
+      const roomType = document.getElementById('room-type').value;
+      const adults = document.getElementById('adults').value;
+      const children = document.getElementById('children').value;
+      
+      // Calculate nights
+      let nights = 0;
+      if (checkIn && checkOut && checkOut > checkIn) {
+        nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+      }
+      
+      // Update summary fields
+      document.getElementById('summary-check-in').textContent = checkIn ? checkIn.toLocaleDateString() : '--/--/----';
+      document.getElementById('summary-check-out').textContent = checkOut ? checkOut.toLocaleDateString() : '--/--/----';
+      document.getElementById('summary-nights').textContent = nights;
+      document.getElementById('summary-guests').textContent = `${adults} Adults, ${children} Children`;
+      
+      // Update room type and pricing
+      if (roomType) {
+        const roomName = document.getElementById('room-type').options[document.getElementById('room-type').selectedIndex].text;
+        document.getElementById('summary-room-type').textContent = roomName;
+        
+        const roomRate = roomPrices[roomType] * nights;
+        const taxes = roomRate * 0.18; // 18% tax
+        const total = roomRate + taxes;
+        
+        document.getElementById('summary-room-rate').textContent = `$${roomRate.toFixed(2)}`;
+        document.getElementById('summary-taxes').textContent = `$${taxes.toFixed(2)}`;
+        document.getElementById('summary-total').textContent = `$${total.toFixed(2)}`;
+      } else {
+        document.getElementById('summary-room-type').textContent = 'Not selected';
+        document.getElementById('summary-room-rate').textContent = '$0';
+        document.getElementById('summary-taxes').textContent = '$0';
+        document.getElementById('summary-total').textContent = '$0';
+      }
+    }
+
+    // Add event listeners for form changes
+    bookingForm.addEventListener('change', updateBookingSummary);
+    bookingForm.addEventListener('input', updateBookingSummary);
+
+    // Set minimum date for check-in (today)
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('check-in').min = today;
+    
+    // Update check-out min date when check-in changes
+    document.getElementById('check-in').addEventListener('change', function() {
+      document.getElementById('check-out').min = this.value;
+      updateBookingSummary();
+    });
+
+    // Form submission
+    bookingForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const formData = {
+        checkIn: document.getElementById('check-in').value,
+        checkOut: document.getElementById('check-out').value,
+        adults: document.getElementById('adults').value,
+        children: document.getElementById('children').value,
+        roomType: document.getElementById('room-type').value,
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        specialRequests: document.getElementById('special-requests').value
+      };
+      
+      // Here you would typically send this data to your server
+      console.log('Booking submitted:', formData);
+      
+      // Show success message
+      alert('Thank you for your booking request! We will contact you shortly to confirm your reservation.');
+      
+      // Reset form
+      this.reset();
+      updateBookingSummary();
+    });
+
+    // Initialize summary
+    updateBookingSummary();
   });
 </script>
 
@@ -443,7 +700,7 @@
     </div>
   </footer>
 
- <!-- Chatbot Widget -->
+  <!-- Chatbot Widget -->
 <div id="chatbot-container" class="fixed bottom-6 right-6 z-50 hidden">
   <div class="bg-white rounded-t-xl shadow-xl w-full max-w-xs sm:max-w-sm h-[500px] flex flex-col">
     <!-- Chat Header -->
@@ -711,5 +968,3 @@
 </script>
 </body>
 </html>
-
-
